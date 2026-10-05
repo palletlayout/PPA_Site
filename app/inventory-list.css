@@ -1,0 +1,80 @@
+.inventory-search { display: grid; gap: 8px; margin: 0 0 20px; max-width: 760px; }
+.inventory-search > label { color: #344054; font-size: 13px; font-weight: 600; }
+.inventory-search > div { display: flex; gap: 8px; }
+.inventory-search input { min-width: 0; width: 100%; min-height: 40px; padding: 10px 12px; border: 1px solid #aab8cb; border-radius: 5px; background: white; font-size: 14px; }
+.inventory-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 36px; margin-bottom: 20px; }
+.inventory-summary > div { display: grid; gap: 6px; }
+.inventory-summary span { font-size: 12px; color: #59677a; }
+.inventory-summary strong { font-size: 28px; }
+.inventory-summary p { max-width: 420px; font-size: 12px; line-height: 1.5; color: #59677a; }
+.inventory-table-wrap { width: 100%; overflow: auto; }
+.inventory-table { width: 100%; min-width: 1780px; border-collapse: collapse; table-layout: auto; }
+.inventory-table th { padding: 12px 16px; background: #f7f9fc; border-bottom: 1px solid #dce2ea; font-size: 12px; font-weight: 600; text-align: left; }
+.inventory-table td { padding: 16px; border-bottom: 1px solid #e8edf3; font-size: 13px; vertical-align: top; overflow-wrap: anywhere; }
+.inventory-table tbody tr:nth-child(even) { background: #fcfdff; }
+.inventory-table time { color: #59677a; line-height: 1.4; }
+.inventory-pagination { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px; font-size: 13px; }
+.inventory-pagination > div { display: flex; gap: 8px; }
+.inventory-empty { padding: 44px 24px; text-align: center; }
+.inventory-empty p { color: #59677a; font-size: 14px; line-height: 1.5; margin: 12px 0 0; }
+.inventory-error { margin: 0 0 20px; padding: 16px; background: #fff3f2; border: 1px solid #e4a7a2; border-radius: 5px; color: #a5231c; font-size: 14px; }
+.inventory-error p { margin: 8px 0; }
+.inventory-error .button { margin-top: 12px; }
+@media (max-width: 760px) {
+  .inventory-search > div { flex-wrap: wrap; }
+  .inventory-search input { flex-basis: 100%; font-size: 18px; min-height: 56px; }
+  .inventory-search > label { font-size: 18px; }
+  .inventory-summary p { flex-basis: 100%; }
+}
+.inventory-live-panel { margin-bottom: 24px; }
+.inventory-live-panel .panel-heading { flex-wrap: wrap; gap: 12px; }
+.inventory-live-state { display: inline-flex; align-items: center; gap: 7px; color: #17663c; font-size: 12px; white-space: nowrap; }
+.inventory-live-state::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.inventory-live-stale { color: #a5231c; }
+.inventory-live-content { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(280px, 2fr); gap: 28px; padding: 20px 24px; }
+.inventory-live-totals { display: flex; flex-wrap: wrap; align-content: start; gap: 24px; }
+.inventory-live-totals > div { display: grid; gap: 6px; }
+.inventory-live-totals span { font-size: 12px; color: #59677a; }
+.inventory-live-totals strong { font-size: 32px; color: #172b4d; }
+.inventory-live-receipts h3 { margin: 0 0 8px; color: #42526e; font-size: 12px; font-weight: 600; }
+.inventory-live-receipts > p { font-size: 13px; color: #59677a; }
+.inventory-live-receipts ul { list-style: none; padding: 0; margin: 0; }
+.inventory-live-receipts li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #e8edf3; font-size: 13px; }
+.inventory-live-receipts li:last-child { border-bottom: 0; }
+.inventory-live-receipts li > div { min-width: 0; }
+.inventory-live-receipts li > div:last-child { text-align: right; }
+.inventory-live-receipts li strong { display: block; overflow-wrap: anywhere; }
+.inventory-live-receipts li span { display: block; margin-top: 4px; font-size: 12px; color: #59677a; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .inventory-live-content { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+}
+.inventory-view-switch { display: flex; gap: 8px; margin-bottom: 20px; }
+.inventory-view-switch [aria-pressed="true"] { border-color: #175cd3; color: #175cd3; background: #edf4ff; }
+.inventory-action-message { padding: 12px 16px; background: #edf8f0; color: #17663c; border-radius: 6px; font-size: 14px; }
+.inventory-table-managed { min-width: 1870px; }
+
+.inventory-table th:first-child, .inventory-table th:nth-child(11) { min-width: 160px; }
+.inventory-table th:nth-child(12) { min-width: 200px; }
+.inventory-table th:nth-child(4) { min-width: 160px; }
+.inventory-quantity { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.inventory-remaining { font-weight: 600; }
+.inventory-demand-links > span { display: block; }
+.inventory-demand-links > span + span { margin-top: 8px; }
+.inventory-milestone { display: block; margin-top: 6px; color: #59677a; font-size: 11px; line-height: 1.5; }
+.inventory-milestone time { display: block; }
+.inventory-consumption { display: inline-block; padding: 4px 7px; border-radius: 4px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.inventory-consumption-not-consumed { color: #17663c; background: #edf8f0; }
+.inventory-consumption-partial { color: #8a5a10; background: #fff4df; }
+.inventory-consumption-consumed { color: #344054; background: #edf0f4; }
+.inventory-live-note { flex-basis: 100%; max-width: 300px; margin: 0; color: #59677a; font-size: 12px; line-height: 1.5; }
+.inventory-live-stage { text-transform: capitalize; }
+
+.inventory-stage { display: inline-block; text-transform: capitalize; font-weight: 600; white-space: nowrap; }
+.inventory-stage-expected { color: #906216; }
+.inventory-stage-available { color: #17663c; }
+.inventory-stage-packed, .inventory-stage-loaded { color: #175cd3; }
+.inventory-stage-partially_consumed { color: #906216; }
+.inventory-stage-dispatched { color: #6540a8; }
+.inventory-stage-deleted { color: #a5231c; }
+.inventory-receipt-kind { display: grid; gap: 8px; max-width: 440px; margin: 0 0 16px; font-size: 14px; }
+.inventory-receipt-kind select { min-height: 44px; padding: 8px; font-size: 16px; color: #172638; border: 1px solid #aab8cb; background: white; border-radius: 6px; }
