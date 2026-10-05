@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "demand_details_source_identity_idx" ON "demand_details" USING btree ("source_scope","source_line_id") WHERE "demand_details"."source_line_id" <> '';

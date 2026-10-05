@@ -1,0 +1,47 @@
+{
+  "name": "ppa",
+  "version": "0.2.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0 <25"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "dev": "CARTFLOW_AUTH_MODE=local next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start",
+    "preview": "CARTFLOW_AUTH_MODE=local CARTFLOW_APP_ORIGIN= DATABASE_URL= POSTGRES_URL= CARTFLOW_DATABASE_PATH=.cartflow-data/user-testing.sqlite next start --hostname 127.0.0.1",
+    "test": "next build && node --experimental-strip-types --test tests/*.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "drizzle-kit generate",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm lint && pnpm test",
+    "auth:hash": "node --experimental-strip-types scripts/hash-password.mjs",
+    "backup:sqlite": "node scripts/backup-sqlite.mjs",
+    "test:built": "node --experimental-strip-types --test tests/*.test.mjs",
+    "verify:capacity": "node --experimental-strip-types scripts/verify-logistics-capacity.mjs --local-sqlite"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@zxing/browser": "^0.2.1",
+    "drizzle-orm": "0.45.2",
+    "next": "16.2.11",
+    "pdf-lib": "1.17.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.11",
+    "react-server-dom-webpack": "19.2.8",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3"
+  },
+  "type": "module"
+}

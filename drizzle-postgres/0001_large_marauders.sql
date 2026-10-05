@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "integration_imports_one_processing_idx" ON "integration_imports" USING btree ("status") WHERE "integration_imports"."status" = 'processing';

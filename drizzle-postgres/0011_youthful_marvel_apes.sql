@@ -1,0 +1,2 @@
+ALTER TABLE "demand_headers" ADD COLUMN "picklist_identity" text DEFAULT '' NOT NULL;--> statement-breakpoint
+CREATE UNIQUE INDEX "demand_headers_batch_picklist_idx" ON "demand_headers" USING btree ("batch_id","picklist_identity") WHERE "demand_headers"."picklist_identity" <> '';

@@ -1,0 +1,1 @@
+ALTER TABLE "inventory_items" ADD COLUMN "pallet_id" text DEFAULT '' NOT NULL;
