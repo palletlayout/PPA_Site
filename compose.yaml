@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+    image: ppa:local
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env.docker
+    environment:
+      CARTFLOW_AUTH_MODE: credentials
+      CARTFLOW_DATABASE_PATH: /data/cartflow.sqlite
+    volumes:
+      - ppa-data:/data
+
+volumes:
+  ppa-data:

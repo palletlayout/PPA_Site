@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Docker runs the traced server; normal local and Vercel builds keep their defaults.
+  ...(process.env.CARTFLOW_STANDALONE === "true" ? { output: "standalone" as const } : {}),
   poweredByHeader: false,
   async headers() {
     return [{
